@@ -1,0 +1,5 @@
+# ninja log v6
+0	318	1743116313259452646	CMakeFiles/Backtester.dir/ATR.cpp.o	76b3445880e93e0a
+0	369	1743116313259697437	CMakeFiles/Backtester.dir/Data.cpp.o	4aae55449bd206be
+0	431	1743116313259826729	CMakeFiles/Backtester.dir/Main.cpp.o	45a907577f391dbd
+431	464	1743116313690005467	Backtester	d8fc7bb718e385bc
