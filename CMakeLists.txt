@@ -7,4 +7,8 @@ add_executable(Backtester
     ATR.cpp
     Data.cpp
     Main.cpp
-        Event.cpp)
+        Event.cpp
+        DataHandler.h
+        Main.h
+        DataHandler.cpp
+        Data.h)
