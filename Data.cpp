@@ -1,3 +1,4 @@
+#pragma once
 #include <map>
 #include <vector>
 #include <fstream>
@@ -5,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include "Data.h"
+#include "Main.h"
 using namespace std;
 
 Day::Day(string line) {
@@ -32,6 +34,9 @@ Day::Day(string line) {
     close = stod(strings.at(6));
     volume = stoi(strings.at(7));
     Name = strings.at(8);
+    if (tickers.back() != Name) {
+        tickers.push_back(Name);
+    }
 }
 
 Data::Data(string file) {

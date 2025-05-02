@@ -1,4 +1,5 @@
 #include<string>
+#include "Event.h"
 #include <utility>
 class Event {
     private:
@@ -27,7 +28,7 @@ class SignalEvent : public Event {
 
 
     public:
-    SignalEvent(std::string symbol, int timwStamp, std::string signalType) {
+    SignalEvent(std::string symbol, int timeStamp, std::string signalType) {
         setType("SignalEvent");
         this->symbol = std::move(symbol);
         this->timeStamp = timeStamp;

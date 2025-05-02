@@ -3,6 +3,8 @@
 #include "Data.h"
 class DataHandler {
 public:
-    virtual Day getLatestData(std::string symbol, int numDays) = 0;
-    virtual void updateBars() = 0;
+    virtual ~DataHandler() = default;
+
+    virtual Day getLatestData(std::string symbol, int timestamp) = 0;
+    virtual void updateBars(int timestamp) = 0;
 };
