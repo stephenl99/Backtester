@@ -4,7 +4,6 @@
 #define MAIN_H
 
 extern std::map<std::string, std::vector<Day>> stockMap;
-extern std::queue<MarketEvent> eventQueue;
 extern unordered_map<string, Day> latestData;
 extern vector<string> tickers;
 

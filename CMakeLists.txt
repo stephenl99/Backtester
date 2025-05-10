@@ -11,4 +11,6 @@ add_executable(Backtester
         DataHandler.h
         Main.h
         DataHandler.cpp
-        Data.h)
+        Data.h
+        Strategy.h
+        Strategy.cpp)

@@ -1,3 +1,4 @@
+#pragma once
 #include "DataHandler.h"
 #include "Event.h"
 
@@ -6,7 +7,7 @@ Day HistoricDataHandler::getLatestData(std::string symbol, int timestamp) overri
     return day;
 }
 void HistoricDataHandler::updateBars(int timestamp) {
-    for (string ticker : tickers) {
+    for (std::string ticker : tickers) {
         latestData[ticker] = getLatestData(ticker, timestamp);
     }
     MarketEvent* marketEvent = new MarketEvent();

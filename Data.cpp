@@ -7,21 +7,20 @@
 #include <string>
 #include "Data.h"
 #include "Main.h"
-using namespace std;
 
-Day::Day(string line) {
-    stringstream ss(line);
-    vector<string> strings;
+Day::Day(std::string line) {
+    std::stringstream ss(line);
+    std::vector<std::string> strings;
     while (ss.good()) {
-        string substring;
+        std::string substring;
         getline(ss, substring, ',');
         strings.push_back(substring);
     }
-    string timeInfo = strings.at(0);
-    vector<string> timeStrings;
-    stringstream ssTime(timeInfo);
+    std::string timeInfo = strings.at(0);
+    std::vector<std::string> timeStrings;
+    std::stringstream ssTime(timeInfo);
     while (ssTime.good()) {
-        string substring;
+        std::string substring;
         getline(ssTime, substring, '-');
         timeStrings.push_back(substring);
     }
@@ -39,19 +38,20 @@ Day::Day(string line) {
     }
 }
 
-Data::Data(string file) {
-    ifstream inputFile (file);
-    string line;
+Data::Data(std::string file) {
+    std::ifstream inputFile (file);
+    std::string line;
     getline(inputFile, line);
     while(getline(inputFile, line)) {
         Day day = Day(line);
         if (!stockMap.count(day.Name)) {
-            vector<Day> days;
+            std::vector<Day> days;
             stockMap.insert(make_pair(day.Name, days));
         }
         stockMap.at(day.Name).push_back(day);
     }
 }
-map<string, vector<Day> > Data::getMap() {
+
+std::map<std::string, std::vector<Day> > Data::getMap() {
     return stockMap;
 }
