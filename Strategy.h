@@ -1,12 +1,11 @@
 #pragma once
 #include <unordered_map>
 #include "DataHandler.h"
-
+#include "Main.h"
 
 class Strategy {
 public:
     virtual ~Strategy() = default;
-
     virtual std::unordered_map<std::string, bool> calculateSignals() = 0; // Determines the moves
 };
 class BuyHoldStrategy : public Strategy {

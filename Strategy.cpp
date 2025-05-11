@@ -17,7 +17,7 @@ void BuyHoldStrategy::calculateSignals(Event* event) {
         this->bars->updateBars();
         for (std::string ticker : tickers) {
             if (bought[ticker] == false) {
-                SignalEvent* signal = new SignalEvent(ticker, timestamp, "LONG");
+                SignalEvent* signal = new SignalEvent(ticker, this->bars->getTimestamp(), "LONG");
                 events.push(signal);
                 bought[ticker] = true;
             }

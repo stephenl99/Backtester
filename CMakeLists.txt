@@ -13,4 +13,5 @@ add_executable(Backtester
         DataHandler.cpp
         Data.h
         Strategy.h
-        Strategy.cpp)
+        Strategy.cpp
+        Day.cpp)

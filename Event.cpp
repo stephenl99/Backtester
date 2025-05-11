@@ -1,6 +1,5 @@
 #include<string>
 #include "Event.h"
-#include <utility>
 
 std::string Event::getType() const {
         return type;
