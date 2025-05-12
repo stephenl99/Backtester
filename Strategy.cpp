@@ -1,15 +1,16 @@
 #include "Strategy.h"
 
-BuyHoldStrategy::BuyHoldStrategy(DataHandler* dh, std::queue<Event*> events) {
+BuyHoldStrategy::BuyHoldStrategy(DataHandler* dh) {
     this->bars = dh;
-    this->events = events;
+    this->events = new std::queue<Event*>;
 }
 // Sets each bought value to false since we don't own anything initially
 std::unordered_map<std::string, bool> BuyHoldStrategy::calculateInitialBought() {
+    std::unordered_map<std::string, bool> temp;
     for (std::string ticker : tickers) {
-        this->bought[ticker] = false;
+        temp[ticker] = false;
     }
-    return this->bought;
+    return temp; // Create new map and pass it to bought
 }
 // Stupid strategy to buy if not bought
 void BuyHoldStrategy::calculateSignals(Event* event) {
@@ -18,7 +19,7 @@ void BuyHoldStrategy::calculateSignals(Event* event) {
         for (std::string ticker : tickers) {
             if (bought[ticker] == false) {
                 SignalEvent* signal = new SignalEvent(ticker, this->bars->getTimestamp(), "LONG");
-                events.push(signal);
+                events->push(signal);
                 bought[ticker] = true;
             }
         }
