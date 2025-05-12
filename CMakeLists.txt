@@ -4,14 +4,17 @@ project(Backtester)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Backtester
-    ATR.cpp
-    Data.cpp
-    Main.cpp
+        Main.cpp
+        Data.cpp
         Event.cpp
+        Event.h
         DataHandler.h
         Main.h
         DataHandler.cpp
         Data.h
+        Day.h
         Strategy.h
         Strategy.cpp
-        Day.cpp)
+        Day.cpp
+        Global.h
+        Global.cpp)

@@ -1,4 +1,3 @@
-#include"Main.h"
 #include "DataHandler.h"
 // Retrieves timestamp of this data handler
 int DataHandler::getTimestamp() const {
@@ -13,7 +12,7 @@ HistoricDataHandler::HistoricDataHandler() {
 
 // Gets the data from the next sequential day
 Day* HistoricDataHandler::getLatestData(std::string* symbol) {
-    Day* day = &stockMap[*symbol][this->timestamp];
+    Day* day = &(*stockMap)[*symbol][this->timestamp];
     return day;
 }
 //Updates the bars for the current strategy
@@ -22,6 +21,6 @@ void HistoricDataHandler::updateBars() {
         (*this->latestData)[ticker] = *getLatestData(&ticker);
     }
     this->timestamp++;
-    MarketEvent* marketEvent = new MarketEvent();
+    const MarketEvent* marketEvent = new MarketEvent();
     this->events->push(*marketEvent); // Pushes next market event to end of queue
 }

@@ -1,9 +1,11 @@
-#pragma once
+#ifndef DATAHANDLER_H
+#define DATAHANDLER_H
 #include "Data.h"
+#include "Global.h"
 #include "Event.h"
 class DataHandler {
 protected:
-    int timestamp;
+    int timestamp = 0;
 public:
     virtual ~DataHandler() = default;
     int getTimestamp() const;
@@ -23,3 +25,4 @@ public:
     Day* getLatestData(std::string* symbol) override;
     void updateBars() override;
 };
+#endif

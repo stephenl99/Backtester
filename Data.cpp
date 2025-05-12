@@ -1,18 +1,27 @@
 #include "Data.h"
 
+#include <iostream>
+
 Data::Data(std::string file) {
-    std::ifstream inputFile (file);
+    this->stockMap = new std::map<std::string, std::vector<Day>>;
+    std::ifstream inputFile(file);
     std::string line;
     getline(inputFile, line);
-    while(getline(inputFile, line)) {
-        Day day = Day(line);
-        if (!stockMap.count(day.Name)) {
-            std::vector<Day> days;
-            stockMap.insert(std::make_pair(day.Name, days));
+    inputFile.open(file);
+    if (inputFile.is_open()) {
+        while(getline(inputFile, line)) {
+            Day day = Day(line);
+            if (!this->stockMap->count(day.Name)) {
+                std::vector<Day> days;
+                this->stockMap->insert(std::make_pair(day.Name, days));
+            }
+            this->stockMap->at(day.Name).push_back(day);
         }
-        stockMap.at(day.Name).push_back(day);
+    } else {
+        std::cerr << "Unable to open file " << file << std::endl;
     }
+    inputFile.close();
 }
-std::map<std::string, std::vector<Day> > Data::getMap() {
-    return stockMap;
+std::map<std::string, std::vector<Day> >* Data::getMap() const {
+    return this->stockMap;
 }
