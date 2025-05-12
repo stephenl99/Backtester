@@ -51,43 +51,43 @@ build cmake_object_order_depends_target_Backtester: phony || .
 
 build CMakeFiles/Backtester.dir/Main.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Main.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Main.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Data.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Data.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Data.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Event.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Event.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Event.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/DataHandler.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/DataHandler.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/DataHandler.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Strategy.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Strategy.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Strategy.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Day.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Day.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Day.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Global.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Global.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Global.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 

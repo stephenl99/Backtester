@@ -1,7 +1,7 @@
 #include "Data.h"
 
 #include <iostream>
-
+#include <fstream>
 Data::Data(std::string file) {
     this->stockMap = new std::map<std::string, std::vector<Day>>;
     std::ifstream inputFile(file);
