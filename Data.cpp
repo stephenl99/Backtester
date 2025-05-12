@@ -7,10 +7,11 @@ Data::Data(std::string file) {
     std::ifstream inputFile(file);
     std::string line;
     getline(inputFile, line);
-    inputFile.open(file);
+    Day* prev = nullptr;
     if (inputFile.is_open()) {
-        while(getline(inputFile, line)) {
-            Day day = Day(line);
+        while (getline(inputFile, line)) {
+            Day day = Day(line, prev);
+            prev = &day;
             if (!this->stockMap->count(day.Name)) {
                 std::vector<Day> days;
                 this->stockMap->insert(std::make_pair(day.Name, days));
