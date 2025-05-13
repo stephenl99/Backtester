@@ -17,4 +17,6 @@ add_executable(Backtester
         Strategy.cpp
         Day.cpp
         Global.h
-        Global.cpp)
+        Global.cpp
+        Portfolio.h
+        Portfolio.cpp)

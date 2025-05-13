@@ -91,6 +91,12 @@ build CMakeFiles/Backtester.dir/Global.cpp.o: CXX_COMPILER__Backtester_unscanned
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
+build CMakeFiles/Backtester.dir/Portfolio.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Portfolio.cpp || cmake_object_order_depends_target_Backtester
+  DEP_FILE = CMakeFiles/Backtester.dir/Portfolio.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Backtester.dir
+  OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Backtester
@@ -99,7 +105,7 @@ build CMakeFiles/Backtester.dir/Global.cpp.o: CXX_COMPILER__Backtester_unscanned
 #############################################
 # Link the executable Backtester
 
-build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o
+build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o CMakeFiles/Backtester.dir/Portfolio.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
   OBJECT_DIR = CMakeFiles/Backtester.dir
   POST_BUILD = :
