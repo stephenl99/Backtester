@@ -7,7 +7,6 @@
 class Portfolio {
     public:
     virtual ~Portfolio() = default;
-
     virtual void updateSignal(Event* event) = 0;
     virtual void updateFill(Event* event) = 0;
 };
@@ -23,7 +22,8 @@ private:
     std::vector<std::unordered_map<std::string, int>> allHoldings = initAllHoldings();
     std::unordered_map<std::string, int> currentHoldings = initCurrentHoldings();
 public:
-    NaivePortfolio(HistoricDataHandler* dh, std::queue<Event>* events, int startTimestamp = 0, double initialCapital = 10000.0, std::vector<std::string> relevantTickers);
+    // Below removed event queue parameter as it should be declared in data handler class
+    NaivePortfolio(HistoricDataHandler* dh, int startTimestamp = 0, double initialCapital = 10000.0, std::vector<std::string> relevantTickers = tickers);
     std::vector<std::unordered_map<std::string, int>> initAllPositions() const;
     std::unordered_map<std::string, int> initCurrentPositions();
     std::vector<std::unordered_map<std::string, int>> initAllHoldings();
@@ -31,7 +31,12 @@ public:
     void updateTime(Event* event);
     void updatePositionsFill(FillEvent* fillEvent);
     void updateHoldingsFill(FillEvent* fillEvent);
+    void updateFill(Event *event);
+
     OrderEvent* generateOrder(SignalEvent* signal, int quantity = 100);
+
+    void updateSignal(Event *event);
+
     // void createDataframe() // TBD IF ACTUALLY WANT TO DO
 
 };

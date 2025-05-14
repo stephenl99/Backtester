@@ -19,4 +19,6 @@ add_executable(Backtester
         Global.h
         Global.cpp
         Portfolio.h
-        Portfolio.cpp)
+        Portfolio.cpp
+        ExecutionHandler.h
+        ExecutionHandler.cpp)

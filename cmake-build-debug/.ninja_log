@@ -1,5 +1,5 @@
 # ninja log v6
-1	32	1747092639582786966	build.ninja	891bf17bec34fec8
+1	32	1747242891099174498	build.ninja	891bf17bec34fec8
 5	513	1747076472743028145	CMakeFiles/Backtester.dir/Data.cpp.o	b4b086d2e4542748
 5	266	1747076472743232064	CMakeFiles/Backtester.dir/Event.cpp.o	1abe605ed284169
 5	484	1747086070118683389	CMakeFiles/Backtester.dir/Strategy.cpp.o	aba4d746bf2041a7
@@ -9,3 +9,10 @@
 6	479	1747076472743824570	CMakeFiles/Backtester.dir/Day.cpp.o	7f9d35233fb4469d
 6	541	1747076472743471316	CMakeFiles/Backtester.dir/DataHandler.cpp.o	1bb02a1a3dfda847
 6	450	1747076472744115697	CMakeFiles/Backtester.dir/Global.cpp.o	b60609a1e51c5c72
+9	291	1747250468921435545	CMakeFiles/Backtester.dir/Event.cpp.o	1abe605ed284169
+8	501	1747250468920697625	CMakeFiles/Backtester.dir/Main.cpp.o	e1a293afc4547b3b
+9	531	1747250468921959048	CMakeFiles/Backtester.dir/Strategy.cpp.o	aba4d746bf2041a7
+9	562	1747250468921767755	CMakeFiles/Backtester.dir/DataHandler.cpp.o	1bb02a1a3dfda847
+5	457	1747250495191465609	CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o	8d840918a80deef6
+5	560	1747250765484185545	CMakeFiles/Backtester.dir/Portfolio.cpp.o	ad96be2bab7f9b80
+561	1662	1747250766039936428	Backtester	825412bd6703b988

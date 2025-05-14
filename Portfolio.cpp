@@ -1,9 +1,8 @@
 #include "Portfolio.h"
 #include "Global.h"
-NaivePortfolio::NaivePortfolio(HistoricDataHandler *dh, std::queue<Event> *events, int startTimestamp, double initialCapital, std::vector<std::string> relevantTickers) {
+NaivePortfolio::NaivePortfolio(HistoricDataHandler *dh, int startTimestamp, double initialCapital, std::vector<std::string> relevantTickers) {
     this->dataHandler = dh;
     this->startDate = startTimestamp;
-    this->dataHandler->setEventQueue(events);
     this->initialCapital = initialCapital;
     this->relevantTickers = relevantTickers; // Tickers we are considering, may be able to remove
 }
@@ -66,4 +65,59 @@ void NaivePortfolio::updateTime(Event* event) {
         holdingMap["total"] += marketValue;
     }
     allHoldings.push_back(holdingMap);
+}
+void NaivePortfolio::updatePositionsFill(FillEvent* fillEvent) {
+    int fillDirection = 0;
+    if (fillEvent->getDirection()) {
+        fillDirection = 1;
+    } else {
+        fillDirection = -1;
+    }
+    currentPositions[fillEvent->getTicker()] += fillDirection * fillEvent->getQuantity();
+}
+void NaivePortfolio::updateHoldingsFill(FillEvent* fillEvent) {
+    int fillDirection = 0;
+    if (fillEvent->getDirection()) {
+        fillDirection = 1;
+    } else {
+        fillDirection = -1;
+    }
+    double fillCost = dataHandler->getLatestData(fillEvent->getTicker())->close;
+    double totalCost = fillDirection * fillCost * fillEvent->getQuantity();
+    currentHoldings[fillEvent->getTicker()] += totalCost;
+    currentHoldings["commission"] += fillEvent->getCommission();
+    currentHoldings["cash"] -= totalCost * fillEvent->getCommission();
+    currentHoldings["total"] -= totalCost * fillEvent->getCommission();
+}
+// Updates both positions and holdings
+void NaivePortfolio::updateFill(Event* event) {
+    if (event->type == "FILL") {
+        updatePositionsFill(static_cast<FillEvent *>(event));
+        updateHoldingsFill(static_cast<FillEvent *>(event));
+    }
+}
+OrderEvent* NaivePortfolio::generateOrder(SignalEvent* signal, int quantity) {
+    std::string ticker = signal->getSymbol();
+    OrderEvent* orderEvent;
+    if (signal->getType() == "LONG" && currentPositions[ticker] == 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", quantity, "BUY");
+    }
+    if (signal->getType() == "SHORT" && currentPositions[ticker] == 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", quantity, "SELL");
+    }
+    if (signal->getType() == "EXIT" && currentPositions[ticker] > 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", abs(currentPositions[ticker]), "SELL");
+    }
+    if (signal->getType() == "EXIT" && currentPositions[ticker] < 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", abs(currentPositions[ticker]), "BUY");
+    } else {
+        throw std::invalid_argument("Invalid creation of order");
+    }
+    return orderEvent;
+}
+void NaivePortfolio::updateSignal(Event* event) {
+    if (event->getType() == "SIGNAL") {
+        OrderEvent *orderEvent = generateOrder(static_cast<SignalEvent *>(event), 100);
+        this->dataHandler->getEventQueue()->push(orderEvent);
+    }
 }

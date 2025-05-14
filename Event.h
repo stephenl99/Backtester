@@ -20,6 +20,10 @@ private:
     std::string signalType;
 public:
     SignalEvent(std::string symbol, int timeStamp, std::string signalType);
+
+    std::string getType();
+
+    std::string getSymbol();
 };
 
 class OrderEvent : public Event {
@@ -30,6 +34,12 @@ private:
     bool buy; // If true buy, if false sell
 public:
     OrderEvent(std::string symbol, std::string orderType, int quantity, bool buy);
+
+    std::string getTicker();
+
+    int getQuantity();
+
+    bool getDirection();
 };
 
 class FillEvent : public Event {
@@ -42,7 +52,12 @@ private:
     double cost;
     double commission;
 public:
-    FillEvent(std::string symbol, int timestamp, int quantity, bool buy, double cost);
+    FillEvent(std::string symbol, int timestamp, int quantity, std::string exchange, bool buy, double cost);
     double getCommission() const;
+    bool getDirection();
+
+    std::string getTicker();
+
+    int getQuantity();
 };
 #endif //EVENT_H

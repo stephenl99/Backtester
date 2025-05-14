@@ -5,7 +5,7 @@ int DataHandler::getTimestamp() const {
 }
 HistoricDataHandler::HistoricDataHandler() {
     timestamp = 0;
-    events = new std::queue<Event>;
+    events = new std::queue<Event*>;
     latestData = new std::unordered_map<std::string, Day>;
     // symbolList = new std::vector<std::string>;
 }
@@ -21,12 +21,12 @@ void HistoricDataHandler::updateBars() {
         (*this->latestData)[ticker] = *getLatestData(ticker);
     }
     this->timestamp++;
-    const MarketEvent* marketEvent = new MarketEvent();
-    this->events->push(*marketEvent); // Pushes next market event to end of queue
+    MarketEvent* marketEvent = new MarketEvent();
+    this->events->push(marketEvent); // Pushes next market event to end of queue
 }
-std::queue<Event>* HistoricDataHandler::getEventQueue() const {
+std::queue<Event*>* HistoricDataHandler::getEventQueue() const {
     return this->events;
 }
-void HistoricDataHandler::setEventQueue(std::queue<Event>* events) {
+void HistoricDataHandler::setEventQueue(std::queue<Event*>* events) {
     this->events = events;
 }

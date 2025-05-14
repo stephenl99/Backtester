@@ -7,7 +7,6 @@ std::string Event::getType() const {
 void Event::setType(std::string type) {
     this->type = std::move(type);
 }
-
 MarketEvent::MarketEvent() {
     setType("MarketEvent");
 }
@@ -17,7 +16,12 @@ SignalEvent::SignalEvent(std::string symbol, int timeStamp, std::string signalTy
     this->timeStamp = timeStamp;
     this->signalType = std::move(signalType);
 }
-
+std::string SignalEvent::getType() {
+    return this->signalType;
+}
+std::string SignalEvent::getSymbol() {
+    return this->symbol;
+}
 OrderEvent::OrderEvent(std::string symbol, std::string orderType, int quantity, bool buy) {
     setType("OrderEvent");
     this->symbol = std::move(symbol);
@@ -25,13 +29,22 @@ OrderEvent::OrderEvent(std::string symbol, std::string orderType, int quantity, 
     this->quantity = quantity;
     this->buy = buy;
 }
+std::string OrderEvent::getTicker() {
+    return this->symbol;
+}
+int OrderEvent::getQuantity() {
+    return this->quantity;
+}
+bool OrderEvent::getDirection() {
+    return this->buy;
+}
 
-
-FillEvent::FillEvent(std::string symbol, int timestamp, int quantity, bool buy, double cost) {
+FillEvent::FillEvent(std::string symbol, int timestamp, int quantity, std::string exchange, bool buy, double cost) {
     setType("FillEvent");
     this->symbol = std::move(symbol);
     this->timestamp = timestamp;
     this->quantity = quantity;
+    this->exchange = exchange;
     this->buy = buy;
     this->cost = cost;
     this->commission = getCommission();
@@ -44,4 +57,13 @@ double FillEvent::getCommission() const {
         temp = std::max(temp, .008 * quantity);
     }
     return temp;
+}
+bool FillEvent:: getDirection() {
+    return buy;
+}
+std::string FillEvent:: getTicker() {
+    return symbol;
+}
+int FillEvent:: getQuantity() {
+    return quantity;
 }
