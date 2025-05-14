@@ -8,22 +8,22 @@ void Event::setType(std::string type) {
     this->type = std::move(type);
 }
 MarketEvent::MarketEvent() {
-    setType("MarketEvent");
+    setType("MARKET");
 }
 SignalEvent::SignalEvent(std::string symbol, int timeStamp, std::string signalType) {
-    setType("SignalEvent");
+    setType("SIGNAL");
     this->symbol = std::move(symbol);
     this->timeStamp = timeStamp;
     this->signalType = std::move(signalType);
 }
-std::string SignalEvent::getType() {
+std::string SignalEvent::getSignalType() {
     return this->signalType;
 }
 std::string SignalEvent::getSymbol() {
     return this->symbol;
 }
 OrderEvent::OrderEvent(std::string symbol, std::string orderType, int quantity, bool buy) {
-    setType("OrderEvent");
+    setType("ORDER");
     this->symbol = std::move(symbol);
     this->orderType = std::move(orderType);
     this->quantity = quantity;
@@ -40,7 +40,7 @@ bool OrderEvent::getDirection() {
 }
 
 FillEvent::FillEvent(std::string symbol, int timestamp, int quantity, std::string exchange, bool buy, double cost) {
-    setType("FillEvent");
+    setType("FILL");
     this->symbol = std::move(symbol);
     this->timestamp = timestamp;
     this->quantity = quantity;

@@ -3,7 +3,7 @@
 #include <sstream>
 Day::Day(std::string line, Day* prev) {
     this->prev = prev;
-    if (line.length() == 0) {
+    if (line.size() == 0) {
         throw std::invalid_argument("Empty line for day constructor");
     }
     std::stringstream ss(line);

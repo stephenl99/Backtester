@@ -3,10 +3,13 @@
 int DataHandler::getTimestamp() const {
     return timestamp;
 }
+bool DataHandler::getContinueExecution() const {
+    return this->continueBacktest;
+}
 HistoricDataHandler::HistoricDataHandler() {
     timestamp = 0;
     events = new std::queue<Event*>;
-    latestData = new std::unordered_map<std::string, Day>;
+    latestData = new std::unordered_map<std::string, Day*>;
     // symbolList = new std::vector<std::string>;
 }
 
@@ -17,11 +20,14 @@ Day* HistoricDataHandler::getLatestData(std::string symbol) {
 }
 //Updates the bars for the current strategy
 void HistoricDataHandler::updateBars() {
-    for (std::string ticker : tickers) {
-        (*this->latestData)[ticker] = *getLatestData(ticker);
+    if (timestamp == maxTimestamp - 5) {
+        this->continueBacktest = false;
+    }
+    for (const std::string& ticker : tickers) {
+        (*this->latestData)[ticker] = getLatestData(ticker);
     }
     this->timestamp++;
-    MarketEvent* marketEvent = new MarketEvent();
+    auto* marketEvent = new MarketEvent();
     this->events->push(marketEvent); // Pushes next market event to end of queue
 }
 std::queue<Event*>* HistoricDataHandler::getEventQueue() const {

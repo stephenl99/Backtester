@@ -6,9 +6,13 @@
 class DataHandler {
 protected:
     int timestamp = 0;
+    bool continueBacktest = true;
 public:
     virtual ~DataHandler() = default;
     int getTimestamp() const;
+
+    bool getContinueExecution() const;
+
     virtual Day* getLatestData(std::string symbol) = 0;
     virtual void updateBars() = 0;
     virtual std::queue<Event*>* getEventQueue() const = 0;
@@ -17,9 +21,8 @@ public:
 class HistoricDataHandler : public DataHandler {
     // Timestamp is days since start of historic data
     std::queue<Event*>* events;
-    std::unordered_map<std::string, Day>* latestData; // Contains the current bars
+    std::unordered_map<std::string, Day*>* latestData; // Contains the current bars
     // std::vector<std::string>* symbolList; // Unneeded
-    bool continueBacktest = true;
 public:
     HistoricDataHandler();
     std::queue<Event*>* getEventQueue() const override;

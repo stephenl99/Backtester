@@ -7,7 +7,6 @@
 #include "Event.h"
 #include"DataHandler.h"
 //I think i must include data handler in order to access current time in datahandler, as opposed to actual current time
-
 class ExecutionHandler {
 public:
     virtual ~ExecutionHandler() = default;
@@ -17,11 +16,12 @@ private:
 };
 
 class NoLatencyExecutionHandler : public ExecutionHandler {
+private:
     std::queue<Event *>* eventQueue;
     DataHandler *dataHandler;
 public:
     NoLatencyExecutionHandler(DataHandler* dataHandler);
-    void ExecuteOrder(Event *event) const;
+    void executeOrder(Event* event) override;
 };
 
 

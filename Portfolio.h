@@ -17,22 +17,23 @@ private:
     int startDate; // start date starting at 0
     double initialCapital;
     std::vector<std::string> relevantTickers;
-    std::vector<std::unordered_map<std::string, int>> allPositions = initAllPositions();
-    std::unordered_map<std::string, int> currentPositions = initCurrentPositions();
-    std::vector<std::unordered_map<std::string, int>> allHoldings = initAllHoldings();
-    std::unordered_map<std::string, int> currentHoldings = initCurrentHoldings();
+    std::vector<std::unordered_map<std::string, int>*>* allPositions = initAllPositions();
+    std::unordered_map<std::string, int>* currentPositions = initCurrentPositions();
+    std::vector<std::unordered_map<std::string, double>*>* allHoldings = initAllHoldings();
+    std::unordered_map<std::string, double>* currentHoldings = initCurrentHoldings();
 public:
     // Below removed event queue parameter as it should be declared in data handler class
-    NaivePortfolio(HistoricDataHandler* dh, int startTimestamp = 0, double initialCapital = 10000.0, std::vector<std::string> relevantTickers = tickers);
-    std::vector<std::unordered_map<std::string, int>> initAllPositions() const;
-    std::unordered_map<std::string, int> initCurrentPositions();
-    std::vector<std::unordered_map<std::string, int>> initAllHoldings();
-    std::unordered_map<std::string, int> initCurrentHoldings();
+    NaivePortfolio(HistoricDataHandler* dh, int startTimestamp = 0, double initialCapital = 100000000.0, std::vector<std::string> relevantTickers = tickers);
+    std::vector<std::unordered_map<std::string, int>*>* initAllPositions() const;
+    std::unordered_map<std::string, int>* initCurrentPositions();
+    std::vector<std::unordered_map<std::string, double>*>* initAllHoldings();
+    std::unordered_map<std::string, double>* initCurrentHoldings();
     void updateTime(Event* event);
     void updatePositionsFill(FillEvent* fillEvent);
     void updateHoldingsFill(FillEvent* fillEvent);
     void updateFill(Event *event);
-
+    std::unordered_map<std::string, int>* current_positions();
+    std::unordered_map<std::string, double>* current_holdings();
     OrderEvent* generateOrder(SignalEvent* signal, int quantity = 100);
 
     void updateSignal(Event *event);

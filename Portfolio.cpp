@@ -1,70 +1,84 @@
 #include "Portfolio.h"
+
+#include <utility>
 #include "Global.h"
+
 NaivePortfolio::NaivePortfolio(HistoricDataHandler *dh, int startTimestamp, double initialCapital, std::vector<std::string> relevantTickers) {
     this->dataHandler = dh;
     this->startDate = startTimestamp;
     this->initialCapital = initialCapital;
-    this->relevantTickers = relevantTickers; // Tickers we are considering, may be able to remove
+    this->relevantTickers = std::move(relevantTickers); // Tickers we are considering, may be able to remove
 }
-std::vector<std::unordered_map<std::string, int>> NaivePortfolio::initAllPositions() const {
-    std::unordered_map<std::string, int> map;
+std::unordered_map<std::string, int>* NaivePortfolio::current_positions() {
+    return currentPositions;
+}
+
+std::unordered_map<std::string, double>* NaivePortfolio::current_holdings() {
+    return currentHoldings;
+}
+std::vector<std::unordered_map<std::string, int>*>* NaivePortfolio::initAllPositions() const {
+    std::unordered_map<std::string, int>* map = new std::unordered_map<std::string, int>;
     for (std::string ticker : tickers) {
-        map[ticker] = 0;
+        (*map)[ticker] = 0;
     }
-    map["dateTime"] = this->startDate; // start date added for reference
-    std::vector<std::unordered_map<std::string, int>> vector;
-    vector.push_back(map);
+    (*map)["dateTime"] = this->startDate; // start date added for reference
+    std::vector<std::unordered_map<std::string, int>*>* vector = new std::vector<std::unordered_map<std::string, int>*>;
+    vector->push_back(map);
     return vector;
 }
-std::unordered_map<std::string, int> NaivePortfolio::initCurrentPositions() {
-    std::unordered_map<std::string, int> map;
-    for (std::string symbol : tickers) {
-        map[symbol] = 0;
-    }
-    return map;
+std::unordered_map<std::string, int>* NaivePortfolio::initCurrentPositions() {
+    return (*allPositions)[0];
 }
-std::vector<std::unordered_map<std::string, int>> NaivePortfolio::initAllHoldings() {
-    std::unordered_map<std::string, int> map;
-    for (std::string symbol : tickers) {
-        map[symbol] = 0;
+std::vector<std::unordered_map<std::string, double>*>* NaivePortfolio::initAllHoldings() {
+    std::unordered_map<std::string, double>* map = new std::unordered_map<std::string, double>;
+    for (std::string ticker : tickers) {
+        (*map)[ticker] = 0.0;
     }
-    map["dateTime"] = this->startDate;
-    map["cash"] = this->initialCapital;
-    map["commission"] = 0.0;
-    map["total"] = this->initialCapital;
-    std::vector<std::unordered_map<std::string, int>> vector;
-    vector.push_back(map);
+    (*map)["dateTime"] = this->startDate;
+    (*map)["cash"] = this->initialCapital;
+    (*map)["commission"] = 0.0;
+    (*map)["total"] = this->initialCapital;
+    std::vector<std::unordered_map<std::string, double>*>* vector = new std::vector<std::unordered_map<std::string, double>*>;
+    vector->push_back(map);
     return vector;
 }
-std::unordered_map<std::string, int> NaivePortfolio::initCurrentHoldings() {
-    std::unordered_map<std::string, int> map;
-    for (std::string symbol : tickers) {
-        map[symbol] = 0;
-    }
-    map["dateTime"] = this->startDate;
-    map["cash"] = this->initialCapital;
-    map["commission"] = 0.0;
-    map["total"] = this->initialCapital;
-    return map;
+std::unordered_map<std::string, double>* NaivePortfolio::initCurrentHoldings() {
+    // std::unordered_map<std::string, int>* map = new std::unordered_map<std::string, int>;
+    // for (const std::string& ticker : tickers) {
+    //     (*map)[ticker] = 0;
+    // }
+    // (*map)["dateTime"] = this->startDate;
+    // (*map)["cash"] = this->initialCapital;
+    // (*map)["commission"] = 0.0;
+    // (*map)["total"] = this->initialCapital;
+    // return map;
+    return (*allHoldings)[0];
 }
 // Decided to all tickers may wish to change to relevant tickers eventually
 //updates the positions and holdings for next day
 void NaivePortfolio::updateTime(Event* event) {
-    dataHandler->updateBars(); // Might be off by one on timestamp check
-    std::unordered_map<std::string, int> positionMap;
-    for (std::string ticker : tickers) {
-        positionMap[ticker] = currentPositions[ticker];
-    }
-    positionMap["dateTime"] = dataHandler->getTimestamp() - 1;
-    allPositions.push_back(positionMap);
+    if (event->getType() == "MARKET") {
+        auto* positionMap = new std::unordered_map<std::string, int>;
+        for (const std::string& ticker : tickers) {
+            (*positionMap)[ticker] = (*currentPositions)[ticker];
+        }
+        (*positionMap)["dateTime"] = (*currentPositions)["dateTime"] + 1;
+        currentPositions = positionMap;
+        allPositions->push_back(positionMap);
 
-    std::unordered_map<std::string, int> holdingMap;
-    for (std::string ticker : tickers) {
-        double marketValue = currentPositions[ticker] * dataHandler->getLatestData(ticker)->close; // Currently using close value could update to open
-        holdingMap[ticker] = marketValue;
-        holdingMap["total"] += marketValue;
+        std::unordered_map<std::string, double>* holdingMap = new std::unordered_map<std::string, double>;
+        (*holdingMap)["total"] = 0;
+        for (std::string ticker : tickers) {
+            double marketValue = (*currentPositions)[ticker] * dataHandler->getLatestData(ticker)->close; // Currently using close value could update to open
+            (*holdingMap)[ticker] = marketValue;
+            (*holdingMap)["total"] += marketValue;
+        }
+        (*holdingMap)["dateTime"] = (*currentHoldings)["dateTime"] + 1;
+        (*holdingMap)["cash"] = (*currentHoldings)["cash"];
+        (*holdingMap)["commission"] = (*currentHoldings)["commission"];
+        currentHoldings = holdingMap;
+        allHoldings->push_back(holdingMap);
     }
-    allHoldings.push_back(holdingMap);
 }
 void NaivePortfolio::updatePositionsFill(FillEvent* fillEvent) {
     int fillDirection = 0;
@@ -73,7 +87,7 @@ void NaivePortfolio::updatePositionsFill(FillEvent* fillEvent) {
     } else {
         fillDirection = -1;
     }
-    currentPositions[fillEvent->getTicker()] += fillDirection * fillEvent->getQuantity();
+    (*currentPositions)[fillEvent->getTicker()] += fillDirection * fillEvent->getQuantity();
 }
 void NaivePortfolio::updateHoldingsFill(FillEvent* fillEvent) {
     int fillDirection = 0;
@@ -84,10 +98,10 @@ void NaivePortfolio::updateHoldingsFill(FillEvent* fillEvent) {
     }
     double fillCost = dataHandler->getLatestData(fillEvent->getTicker())->close;
     double totalCost = fillDirection * fillCost * fillEvent->getQuantity();
-    currentHoldings[fillEvent->getTicker()] += totalCost;
-    currentHoldings["commission"] += fillEvent->getCommission();
-    currentHoldings["cash"] -= totalCost * fillEvent->getCommission();
-    currentHoldings["total"] -= totalCost * fillEvent->getCommission();
+    (*currentHoldings)[fillEvent->getTicker()] += totalCost;
+    (*currentHoldings)["commission"] += fillEvent->getCommission();
+    (*currentHoldings)["cash"] -= totalCost * fillEvent->getCommission();
+    (*currentHoldings)["total"] -= totalCost * fillEvent->getCommission();
 }
 // Updates both positions and holdings
 void NaivePortfolio::updateFill(Event* event) {
@@ -98,26 +112,27 @@ void NaivePortfolio::updateFill(Event* event) {
 }
 OrderEvent* NaivePortfolio::generateOrder(SignalEvent* signal, int quantity) {
     std::string ticker = signal->getSymbol();
-    OrderEvent* orderEvent;
-    if (signal->getType() == "LONG" && currentPositions[ticker] == 0) {
+    OrderEvent* orderEvent = nullptr;
+    int t = (*currentPositions)[ticker];
+    if (signal->getSignalType() == "LONG" && t == 0) {
         orderEvent = new OrderEvent(ticker, "MKT", quantity, "BUY");
     }
-    if (signal->getType() == "SHORT" && currentPositions[ticker] == 0) {
+    if (signal->getSignalType() == "SHORT" && t == 0) {
         orderEvent = new OrderEvent(ticker, "MKT", quantity, "SELL");
     }
-    if (signal->getType() == "EXIT" && currentPositions[ticker] > 0) {
-        orderEvent = new OrderEvent(ticker, "MKT", abs(currentPositions[ticker]), "SELL");
+    if (signal->getSignalType() == "EXIT" && t > 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", abs(t), "SELL");
     }
-    if (signal->getType() == "EXIT" && currentPositions[ticker] < 0) {
-        orderEvent = new OrderEvent(ticker, "MKT", abs(currentPositions[ticker]), "BUY");
-    } else {
-        throw std::invalid_argument("Invalid creation of order");
+    if (signal->getSignalType() == "EXIT" && t < 0) {
+        orderEvent = new OrderEvent(ticker, "MKT", abs(t), "BUY");
     }
     return orderEvent;
 }
 void NaivePortfolio::updateSignal(Event* event) {
     if (event->getType() == "SIGNAL") {
         OrderEvent *orderEvent = generateOrder(static_cast<SignalEvent *>(event), 100);
-        this->dataHandler->getEventQueue()->push(orderEvent);
+        if (orderEvent != nullptr) {
+            this->dataHandler->getEventQueue()->push(orderEvent);
+        }
     }
 }

@@ -21,8 +21,7 @@ private:
 public:
     SignalEvent(std::string symbol, int timeStamp, std::string signalType);
 
-    std::string getType();
-
+    std::string getSignalType();
     std::string getSymbol();
 };
 

@@ -7,7 +7,7 @@ NoLatencyExecutionHandler::NoLatencyExecutionHandler(DataHandler* dataHandler) {
     this->dataHandler = dataHandler;
 }
 // Converts Order into fill
-void NoLatencyExecutionHandler::ExecuteOrder(Event* event) const {
+void NoLatencyExecutionHandler::executeOrder(Event* event) {
     if (event->getType() == "ORDER") {
         OrderEvent* orderEvent = static_cast<OrderEvent*>(event);
         FillEvent* fillEvent = new FillEvent(orderEvent->getTicker(), dataHandler->getTimestamp(), orderEvent->getQuantity(), "ARCA", orderEvent->getDirection(), 0.0); // Initialize cost to 0.0
