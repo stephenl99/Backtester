@@ -52,70 +52,54 @@ build cmake_object_order_depends_target_Backtester: phony || .
 build CMakeFiles/Backtester.dir/Main.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Main.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Data.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Data.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Data.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Event.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Event.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Event.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/DataHandler.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/DataHandler.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/DataHandler.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Strategy.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Strategy.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Strategy.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Day.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Day.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Day.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Global.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Global.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Global.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Portfolio.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Portfolio.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Portfolio.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/ExecutionHandler.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
-  OBJECT_DIR = CMakeFiles/Backtester.dir
-  OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
-
-build CMakeFiles/Backtester.dir/pythonBindings.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/pythonBindings.cpp || cmake_object_order_depends_target_Backtester
-  DEP_FILE = CMakeFiles/Backtester.dir/pythonBindings.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
@@ -127,7 +111,7 @@ build CMakeFiles/Backtester.dir/pythonBindings.cpp.o: CXX_COMPILER__Backtester_u
 #############################################
 # Link the executable Backtester
 
-build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o CMakeFiles/Backtester.dir/Portfolio.cpp.o CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o CMakeFiles/Backtester.dir/pythonBindings.cpp.o
+build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o CMakeFiles/Backtester.dir/Portfolio.cpp.o CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
   OBJECT_DIR = CMakeFiles/Backtester.dir
   POST_BUILD = :
