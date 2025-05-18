@@ -437,3 +437,41 @@ events:
       LTO support using: LLVM version 16.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 16.0.0 (tapi-1600.0.11.9)
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "/Users/stephenlinder/miniconda3/share/cmake/pybind11/pybind11Common.cmake:323 (check_cxx_compiler_flag)"
+      - "/Users/stephenlinder/miniconda3/share/cmake/pybind11/pybind11Common.cmake:363 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "/Users/stephenlinder/miniconda3/share/cmake/pybind11/pybind11Common.cmake:435 (_pybind11_generate_lto)"
+      - "/Users/stephenlinder/miniconda3/share/cmake/pybind11/pybind11Config.cmake:250 (include)"
+      - "CMakeLists.txt:8 (find_package)"
+    checks:
+      - "Performing Test HAS_FLTO_THIN"
+    directories:
+      source: "/Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GSjJiU"
+      binary: "/Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GSjJiU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "14.6"
+      CMAKE_OSX_SYSROOT: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk"
+    buildResult:
+      variable: "HAS_FLTO_THIN"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GSjJiU'
+        
+        Run Build Command(s): /Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -v cmTC_f1561
+        [1/2] /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DHAS_FLTO_THIN  -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6   -flto -MD -MT CMakeFiles/cmTC_f1561.dir/src.cxx.o -MF CMakeFiles/cmTC_f1561.dir/src.cxx.o.d -o CMakeFiles/cmTC_f1561.dir/src.cxx.o -c /Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GSjJiU/src.cxx
+        [2/2] : && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cmTC_f1561.dir/src.cxx.o -o cmTC_f1561  -flto && :
+        
+      exitCode: 0
+...

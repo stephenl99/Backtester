@@ -1,11 +1,11 @@
 #include "Main.h"
 #include <iostream>
 #include <filesystem>
-
 #include "DataHandler.h"
 #include "ExecutionHandler.h"
 #include "Portfolio.h"
 #include "Strategy.h"
+#include <Python.h>
 
 int main() {
     const Data data("../all_stocks_5yr.csv");
@@ -55,6 +55,6 @@ int main() {
     // for (std::string ticker : tickers) {
     //     std::cout << (*naivePortfolio->current_holdings())[ticker] << std::endl;
     // }
-
+    auto* allPositions = naivePortfolio->getAllPositions();
     return 0;
 }

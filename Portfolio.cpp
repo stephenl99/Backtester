@@ -3,6 +3,14 @@
 #include <utility>
 #include "Global.h"
 
+
+std::vector<std::unordered_map<std::string, int>*>* NaivePortfolio::getAllPositions() const {
+    return allPositions;
+}
+std::vector<std::unordered_map<std::string, double>*>* NaivePortfolio::getAllHoldings() const {
+    return allHoldings;
+}
+
 NaivePortfolio::NaivePortfolio(HistoricDataHandler *dh, int startTimestamp, double initialCapital, std::vector<std::string> relevantTickers) {
     this->dataHandler = dh;
     this->startDate = startTimestamp;

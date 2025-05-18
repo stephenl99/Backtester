@@ -22,6 +22,10 @@ private:
     std::vector<std::unordered_map<std::string, double>*>* allHoldings = initAllHoldings();
     std::unordered_map<std::string, double>* currentHoldings = initCurrentHoldings();
 public:
+    std::vector<std::unordered_map<std::string, int> *> *getAllPositions() const;
+
+    std::vector<std::unordered_map<std::string, double> *> *getAllHoldings() const;
+
     // Below removed event queue parameter as it should be declared in data handler class
     NaivePortfolio(HistoricDataHandler* dh, int startTimestamp = 0, double initialCapital = 100000000.0, std::vector<std::string> relevantTickers = tickers);
     std::vector<std::unordered_map<std::string, int>*>* initAllPositions() const;
