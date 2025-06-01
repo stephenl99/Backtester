@@ -1,8 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -G Ninja -DPython_EXECUTABLE=/Users/stephenlinder/miniconda3/bin/python -DPython3_EXECUTABLE=/Users/stephenlinder/miniconda3/bin/python -S /Users/stephenlinder/Desktop/Projects/Backtester -B /Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug
--- Found pybind11: /opt/homebrew/opt/pybind11/include (found version "2.13.6")
--- Using Python3_EXECUTABLE: /Users/stephenlinder/miniconda3/bin/python
--- Using Python3_INCLUDE_DIRS: /Users/stephenlinder/miniconda3/include/python3.12
--- Using Python3_LIBRARIES: /Users/stephenlinder/miniconda3/lib/libpython3.12.dylib
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug
