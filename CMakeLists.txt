@@ -15,31 +15,25 @@ message(STATUS "Using Python3_LIBRARIES: ${Python3_LIBRARIES}")
 include_directories(${Python3_INCLUDE_DIRS})
 link_directories(${Python3_LIBRARY_DIRS})
 
-# Create the Python binding module
-pybind11_add_module(PythonBinding PythonBinding.cpp)
-
-# Create the main executable (without PythonBinding.cpp)
-add_executable(Backtester
+# First create a library with all the backtester code
+add_library(BacktesterLib STATIC
         Main.cpp
         Data.cpp
         Event.cpp
-        Event.h
-        DataHandler.h
-        Main.h
         DataHandler.cpp
-        Data.h
-        Day.h
-        Strategy.h
         Strategy.cpp
         Day.cpp
-        Global.h
         Global.cpp
-        Portfolio.h
         Portfolio.cpp
-        ExecutionHandler.h
         ExecutionHandler.cpp)
 
-target_link_libraries(Backtester PRIVATE ${Python3_LIBRARIES})
+# Create the Python binding module and link it with BacktesterLib
+pybind11_add_module(PythonBinding PythonBinding.cpp)
+target_link_libraries(PythonBinding PRIVATE BacktesterLib)
+
+# Create the main executable and link it with BacktesterLib
+add_executable(Backtester Main.cpp)
+target_link_libraries(Backtester PRIVATE BacktesterLib ${Python3_LIBRARIES})
 
 #include_directories(/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13/include/python3.13/)
 #include_directories(/Users/stephenlinder/miniconda3/pkgs/python-3.12.8-h99e199e_0/include/python3.12/)

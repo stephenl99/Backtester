@@ -7,6 +7,7 @@
 #include "Portfolio.h"
 #include "Strategy.h"
 #include "PythonBinding.h"
+
 int main() {
     const Data data("../all_stocks_5yr.csv");
     stockMap = data.getMap();
@@ -56,5 +57,5 @@ int main() {
     //     std::cout << (*naivePortfolio->current_holdings())[ticker] << std::endl;
     // }
 
-    return 0;
+    return 5;
 }

@@ -4,4 +4,5 @@
 #include "Day.h"
 #include "Data.h"
 #include "Global.h"
+int main();
 #endif //MAIN_H
