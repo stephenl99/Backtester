@@ -10,11 +10,10 @@ HistoricDataHandler::HistoricDataHandler() {
     timestamp = 0;
     events = new std::queue<Event*>;
     latestData = new std::unordered_map<std::string, Day*>;
-    // symbolList = new std::vector<std::string>;
 }
 
 // Gets the data from the next sequential day
-Day* HistoricDataHandler::getLatestData(std::string symbol) {
+Day* HistoricDataHandler::getLatestData(const std::string symbol) {
     Day* day = &(*stockMap)[symbol][this->timestamp];
     return day;
 }

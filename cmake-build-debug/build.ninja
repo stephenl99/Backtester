@@ -41,6 +41,43 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug/
 # =============================================================================
+# Object build statements for MODULE_LIBRARY target PythonBinding
+
+
+#############################################
+# Order-only phony target for PythonBinding
+
+build cmake_object_order_depends_target_PythonBinding: phony || .
+
+build CMakeFiles/PythonBinding.dir/PythonBinding.cpp.o: CXX_COMPILER__PythonBinding_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/PythonBinding.cpp || cmake_object_order_depends_target_PythonBinding
+  DEFINES = -DPythonBinding_EXPORTS
+  DEP_FILE = CMakeFiles/PythonBinding.dir/PythonBinding.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fPIC -fvisibility=hidden -fcolor-diagnostics
+  INCLUDES = -isystem /Users/stephenlinder/miniconda3/include/python3.12 -isystem /opt/homebrew/opt/pybind11/include
+  OBJECT_DIR = CMakeFiles/PythonBinding.dir
+  OBJECT_FILE_DIR = CMakeFiles/PythonBinding.dir
+
+
+# =============================================================================
+# Link build statements for MODULE_LIBRARY target PythonBinding
+
+
+#############################################
+# Link the shared module PythonBinding.cpython-312-darwin.so
+
+build PythonBinding.cpython-312-darwin.so: CXX_MODULE_LIBRARY_LINKER__PythonBinding_Debug CMakeFiles/PythonBinding.dir/PythonBinding.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_FLAGS = -Xlinker -undefined -Xlinker dynamic_lookup
+  LINK_LIBRARIES = -Wl,-rpath,/Users/stephenlinder/miniconda3/lib
+  LINK_PATH = -L/Users/stephenlinder/miniconda3/lib
+  OBJECT_DIR = CMakeFiles/PythonBinding.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = PythonBinding.cpython-312-darwin.so
+  TARGET_PDB = PythonBinding.cpython-312-darwin.so.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target Backtester
 
 
@@ -51,55 +88,64 @@ build cmake_object_order_depends_target_Backtester: phony || .
 
 build CMakeFiles/Backtester.dir/Main.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Main.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Data.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Data.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Data.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Event.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Event.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Event.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/DataHandler.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/DataHandler.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/DataHandler.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Strategy.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Strategy.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Strategy.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Day.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Day.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Day.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Global.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Global.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Global.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/Portfolio.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/Portfolio.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/Portfolio.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
 build CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o: CXX_COMPILER__Backtester_unscanned_Debug /Users/stephenlinder/Desktop/Projects/Backtester/ExecutionHandler.cpp || cmake_object_order_depends_target_Backtester
   DEP_FILE = CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fcolor-diagnostics
+  INCLUDES = -I/Users/stephenlinder/miniconda3/include/python3.12
   OBJECT_DIR = CMakeFiles/Backtester.dir
   OBJECT_FILE_DIR = CMakeFiles/Backtester.dir
 
@@ -111,8 +157,10 @@ build CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o: CXX_COMPILER__Backtester
 #############################################
 # Link the executable Backtester
 
-build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o CMakeFiles/Backtester.dir/Portfolio.cpp.o CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o
+build Backtester: CXX_EXECUTABLE_LINKER__Backtester_Debug CMakeFiles/Backtester.dir/Main.cpp.o CMakeFiles/Backtester.dir/Data.cpp.o CMakeFiles/Backtester.dir/Event.cpp.o CMakeFiles/Backtester.dir/DataHandler.cpp.o CMakeFiles/Backtester.dir/Strategy.cpp.o CMakeFiles/Backtester.dir/Day.cpp.o CMakeFiles/Backtester.dir/Global.cpp.o CMakeFiles/Backtester.dir/Portfolio.cpp.o CMakeFiles/Backtester.dir/ExecutionHandler.cpp.o | /Users/stephenlinder/miniconda3/lib/libpython3.12.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
+  LINK_LIBRARIES = -Wl,-rpath,/Users/stephenlinder/miniconda3/lib  /Users/stephenlinder/miniconda3/lib/libpython3.12.dylib
+  LINK_PATH = -L/Users/stephenlinder/miniconda3/lib
   OBJECT_DIR = CMakeFiles/Backtester.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -145,6 +193,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build PythonBinding: phony PythonBinding.cpython-312-darwin.so
+
 # =============================================================================
 # Folder targets.
 
@@ -153,7 +203,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/stephenlinder/Desktop/Projects/Backtester/cmake-build-debug
 
-build all: phony Backtester
+build all: phony PythonBinding.cpython-312-darwin.so Backtester
 
 # =============================================================================
 # Built-in targets
@@ -162,14 +212,14 @@ build all: phony Backtester
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /Users/stephenlinder/Desktop/Projects/Backtester/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPython/Support.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPython3.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPythonInterp.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /Users/stephenlinder/Desktop/Projects/Backtester/CMakeLists.txt /opt/homebrew/opt/pybind11/share/cmake/pybind11/FindPythonLibsNew.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Common.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Config.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11ConfigVersion.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Targets.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /Users/stephenlinder/Desktop/Projects/Backtester/CMakeLists.txt CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeParseArguments.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPython/Support.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPython3.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/FindPythonInterp.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.29/Modules/Platform/UnixPaths.cmake /Users/stephenlinder/Desktop/Projects/Backtester/CMakeLists.txt /opt/homebrew/opt/pybind11/share/cmake/pybind11/FindPythonLibsNew.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Common.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Config.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11ConfigVersion.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Targets.cmake /opt/homebrew/opt/pybind11/share/cmake/pybind11/pybind11Tools.cmake CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -6,7 +6,7 @@
 #include "ExecutionHandler.h"
 #include "Portfolio.h"
 #include "Strategy.h"
-
+#include "PythonBinding.h"
 int main() {
     const Data data("../all_stocks_5yr.csv");
     stockMap = data.getMap();
