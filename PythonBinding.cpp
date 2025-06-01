@@ -5,7 +5,7 @@ int add() {
     return 0;
 };
 int run() {
-    return main();
+    return main() + 5;
 }
 PYBIND11_MODULE(PythonBinding, m) {
     m.def("run", &run, "Run the simulation");

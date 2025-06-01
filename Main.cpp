@@ -8,8 +8,21 @@
 #include "Strategy.h"
 #include "PythonBinding.h"
 
+namespace fs = std::filesystem;
+
 int main() {
-    const Data data("../all_stocks_5yr.csv");
+    // Get the path to the executable
+    fs::path exe_path = fs::current_path();
+    // Go up one directory if we're in build/
+    if (exe_path.filename() == "build" || exe_path.filename() == "cmake-build-debug") {
+        exe_path = exe_path.parent_path();
+    }
+    // Construct path to data file
+    fs::path data_path = exe_path / "all_stocks_5yr.csv";
+    
+    std::cout << "Looking for data file at: " << data_path << std::endl;
+    
+    const Data data(data_path.string());
     stockMap = data.getMap();
     maxTimestamp = (*stockMap)["A"].size();// Set maxtimestamp
     for (auto& pair : *stockMap) {
@@ -57,5 +70,5 @@ int main() {
     //     std::cout << (*naivePortfolio->current_holdings())[ticker] << std::endl;
     // }
 
-    return 5;
+    return 6;
 }
