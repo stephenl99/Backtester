@@ -19,7 +19,7 @@ private:
     std::vector<std::string> relevantTickers;
     std::vector<std::unordered_map<std::string, int>*>* allPositions = initAllPositions();
     std::unordered_map<std::string, int>* currentPositions = initCurrentPositions();
-    std::vector<std::unordered_map<std::string, double>*>* allHoldings = initAllHoldings();
+    std::vector<std::unordered_map<std::string, double>*>* allHoldings = initAllHoldings(); // Holdings mps each stock to the current worth of the money invested in it.
     std::unordered_map<std::string, double>* currentHoldings = initCurrentHoldings();
 public:
     // Below removed event queue parameter as it should be declared in data handler class
@@ -32,9 +32,12 @@ public:
     void updatePositionsFill(FillEvent* fillEvent);
     void updateHoldingsFill(FillEvent* fillEvent);
     void updateFill(Event *event);
-    std::unordered_map<std::string, int>* current_positions();
-    std::unordered_map<std::string, double>* current_holdings();
+    std::unordered_map<std::string, int>* current_positions() const;
+    std::unordered_map<std::string, double>* current_holdings() const;
+    std::vector<std::unordered_map<std::string, int> *>* all_positions() const;
+    std::vector<std::unordered_map<std::string, double> *>* all_holdings() const;
     OrderEvent* generateOrder(SignalEvent* signal, int quantity = 100);
+    std::vector<double> getHoldings(std::string ticker);
 
     void updateSignal(Event *event);
 

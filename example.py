@@ -1,6 +1,8 @@
 #!!/opt/homebrew/bin/python3
 import sys
 import os
+import matplotlib.pyplot as plt
+
 
 # Get the absolute path to the project root directory (where this script is)
 project_root = os.path.dirname(os.path.abspath(__file__))
@@ -33,9 +35,11 @@ try:
     print("Successfully imported PythonBinding")
     print(f"Available functions: {dir(PythonBinding)}")
     
-    result = PythonBinding.run()
+    result = PythonBinding.getHoldings()
     print(f"Result: {result}")
 except Exception as e:
     print(f"\nError: {type(e).__name__}: {str(e)}")
     print("Python version:", sys.version)
+
+
 

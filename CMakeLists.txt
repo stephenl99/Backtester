@@ -32,7 +32,9 @@ pybind11_add_module(PythonBinding PythonBinding.cpp)
 target_link_libraries(PythonBinding PRIVATE BacktesterLib)
 
 # Create the main executable and link it with BacktesterLib
-add_executable(Backtester Main.cpp)
+add_executable(Backtester Main.cpp
+        Utilities.h
+        Utilities.cpp)
 target_link_libraries(Backtester PRIVATE BacktesterLib ${Python3_LIBRARIES})
 
 #include_directories(/opt/homebrew/opt/python@3.13/Frameworks/Python.framework/Versions/3.13/include/python3.13/)

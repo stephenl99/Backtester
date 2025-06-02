@@ -9,13 +9,28 @@ NaivePortfolio::NaivePortfolio(HistoricDataHandler *dh, int startTimestamp, doub
     this->initialCapital = initialCapital;
     this->relevantTickers = std::move(relevantTickers); // Tickers we are considering, may be able to remove
 }
-std::unordered_map<std::string, int>* NaivePortfolio::current_positions() {
+std::unordered_map<std::string, int>* NaivePortfolio::current_positions() const {
     return currentPositions;
 }
 
-std::unordered_map<std::string, double>* NaivePortfolio::current_holdings() {
+std::unordered_map<std::string, double>* NaivePortfolio::current_holdings() const {
     return currentHoldings;
 }
+std::vector<std::unordered_map<std::string, double> *>* NaivePortfolio::all_holdings() const {
+    return allHoldings;
+}
+std::vector<std::unordered_map<std::string, int> *>* NaivePortfolio::all_positions() const {
+    return allPositions;
+}
+
+std::vector<double> NaivePortfolio::getHoldings(std::string ticker) {
+    std::vector<double> holdingsList;
+    for (auto* map : *allHoldings) {
+        holdingsList.push_back((*map)[ticker]);
+    }
+    return holdingsList;
+}
+
 std::vector<std::unordered_map<std::string, int>*>* NaivePortfolio::initAllPositions() const {
     std::unordered_map<std::string, int>* map = new std::unordered_map<std::string, int>;
     for (std::string ticker : tickers) {

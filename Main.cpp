@@ -33,6 +33,8 @@ int main() {
     auto naivePortfolio = new NaivePortfolio(dataHandler);
     auto noLatencyExecutionHandler = new NoLatencyExecutionHandler(dataHandler);
 
+    auto* positions = naivePortfolio->all_positions();
+    auto* holdings = naivePortfolio->all_holdings();
 
     while (true) {
         if (dataHandler->getContinueExecution()) {
@@ -66,9 +68,7 @@ int main() {
     double cashSpent = naivePortfolio->current_holdings()->at("cash");
     double cashEarned = naivePortfolio->current_holdings()->at("total");
     std::cout << cashEarned + cashSpent << std::endl;
-    // for (std::string ticker : tickers) {
-    //     std::cout << (*naivePortfolio->current_holdings())[ticker] << std::endl;
-    // }
 
+    appleHoldings = naivePortfolio->NaivePortfolio::getHoldings( "AAPL");
     return 6;
 }
