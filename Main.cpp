@@ -67,8 +67,8 @@ int main() {
     std::cout << "Finished" << std::endl;
     double cashSpent = naivePortfolio->current_holdings()->at("cash");
     double cashEarned = naivePortfolio->current_holdings()->at("total");
-    std::cout << cashEarned + cashSpent << std::endl;
 
     appleHoldings = naivePortfolio->NaivePortfolio::getHoldings( "AAPL");
-    return 6;
+    std::cout << appleHoldings.at(appleHoldings.size() - 1) << std::endl;
+    return 0;
 }
